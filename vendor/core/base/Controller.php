@@ -10,7 +10,7 @@ abstract class Controller
     public $layout;
 
 //пользовательские данные
-    public $vars=[];
+    public $vars = [];
 
     public function __construct($route)
     {
@@ -24,8 +24,9 @@ abstract class Controller
         $viewObject->render($this->vars);
     }
 
-    public  function set($vars){
-        $this->vars=$vars;
+    public function set($vars)
+    {
+        $this->vars = $vars;
     }
 
 }

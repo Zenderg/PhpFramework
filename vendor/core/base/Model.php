@@ -34,14 +34,16 @@ abstract class Model
         return $this->pdo->query($sql, [$id]);
     }
 
-    public function findBySql($sql, $params=[]){
-        return $this->pdo->query($sql,$params);
+    public function findBySql($sql, $params = [])
+    {
+        return $this->pdo->query($sql, $params);
     }
 
-    public function findLike($str, $field,$table=''){
-        $table=$table ?: $this->table;
-        $sql="SELECT * FROM $table WHERE $field LIKE ?";
-        return $this->pdo->query($sql, ['%'.$str.'%']);
+    public function findLike($str, $field, $table = '')
+    {
+        $table = $table ?: $this->table;
+        $sql = "SELECT * FROM $table WHERE $field LIKE ?";
+        return $this->pdo->query($sql, ['%' . $str . '%']);
     }
 
 }

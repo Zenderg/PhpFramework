@@ -47,7 +47,7 @@ class Router
                 if (!isset($route['action'])) {
                     $route['action'] = "index";
                 }
-                $route['controller']= self::upperCamelCase($route['controller']);
+                $route['controller'] = self::upperCamelCase($route['controller']);
                 self::$route = $route;
                 return true;
             }
@@ -58,9 +58,9 @@ class Router
     //Перенаправляет url по конкретному маршруту
     public static function dispatch($url)
     {
-        $url=self::removeQueryString($url);
+        $url = self::removeQueryString($url);
         if (self::matchRoute($url)) {
-            $controller = 'app\controllers\\' . self::$route['controller'].'Controller';
+            $controller = 'app\controllers\\' . self::$route['controller'] . 'Controller';
             if (class_exists($controller)) {
                 $controllerObj = new $controller(self::$route);
                 $action = self::lowerCamelCase(self::$route['action'] . 'Action');
@@ -94,13 +94,13 @@ class Router
         return lcfirst(self::upperCamelCase($name));
     }
 
-    protected static function removeQueryString($url){
-        if($url){
-            $params=explode('&', $url, 2);
-            if(false===strpos($params[0],'=')){
+    protected static function removeQueryString($url)
+    {
+        if ($url) {
+            $params = explode('&', $url, 2);
+            if (false === strpos($params[0], '=')) {
                 return rtrim($params[0], '/');
-            }
-            else{
+            } else {
                 return '';
             }
         }
