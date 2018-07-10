@@ -11,11 +11,7 @@ class MainController extends AppController
 
     public function indexAction()
     {
-        $model = new Main();
-        $posts = $model->findAll();
-        $data = $model->findBySql("SHOW databases");
-        print_r($data);
-        $this->set(compact('posts'));
+
     }
 
 }

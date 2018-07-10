@@ -10,7 +10,7 @@
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-
+<h1>Default</h1>
 <?= $content ?>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
